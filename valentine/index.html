@@ -1,0 +1,94 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+</head>
+<body>
+    <center><H1 style="color: rgb(253, 174, 187);" id="valentine">WILL YOU BE MY VALENTINE ??</H1></center>
+    <div>
+        <div class="haut"><video src="IMG_6088.MOV" autoplay muted loop playsinline id="video"></video></div>
+        <div class="bas">
+            <button class="yes" id="yes">YES</button>
+            <button class="NO" id="no">NO</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+   div{
+    height: 100%;
+    width: 100%;
+   }
+   .haut{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .bas{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   video{
+    height: 75%;
+    width: 75%;
+   }
+   .yes{
+    color: white;
+    background-color: rgb(6, 184, 6);
+    height: 40px;
+    width: 130px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+   }
+
+   .no{
+    color: white;
+    background-color: rgb(235, 23, 23);
+    height: 40px;
+    width: 130px;
+    border: 0;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+   }
+</style>
+
+<script>
+    const no = document.getElementById("no");
+    const yes = document.getElementById('yes')
+    const valentine = document.getElementById("valentine")
+    const video = document.getElementById("video")
+
+    no.addEventListener("click", () => {
+        no.textContent = "Are you sure ????"
+        const height = yes.offsetHeight;
+        const width = yes.offsetWidth;
+
+        yes.style.width = (width + 30) + "px"
+        yes.style.height = (width + 30) + "px"
+    })
+
+    yes.addEventListener("click", () =>{
+        valentine.textContent = "OHWWWW I LOVE U SO MUCH"
+        video.src = "IMG_6089.MP4"
+        video.style.height = "100%"
+        video.style.width = "100%"
+        yes.style.width = "330px"
+        yes.style.height = "230px"
+        yes.style.backgroundColor = "pink"
+        yes.style.color = "black"
+        yes.textContent = "SHE SAID YEEEEES"
+        no.style.display = "none"
+        video.load()
+    } )
+
+   
+</script>
